@@ -4,7 +4,21 @@
 <meta charset="UTF-8">
 <title>Test</title>
 <style>
-
+	.fr {
+		display: inline-block;
+		width: 250px;
+		height: 200px;
+		background-color: orange;
+		padding: 30px;
+	}
+	.inText {
+		width:150px;
+		height: 30px;
+	}
+	.lbl {
+		display: inline-block;
+		width: 80px;
+	}
 </style>
 <script type="text/javascript">
 
@@ -12,7 +26,14 @@
 </head>
 <body>
 	<form>
-		<div style="display: inline-block; width: 250px; height: 200px;">아이디<><input style="width:120px; height: 30px;" name="User name" type="text"></div>
+		<div class="fr">
+			<div>
+				<label for="id" class="lbl">아이디</label><input name="id" id="id" type="text" class="inText">
+			</div>
+			<div>
+				<label for="pw" class="lbl">비밀번호</label><input name="pw" id="pw" type="password" class="inText">
+			</div>
+		</div>
 	</form>
 </body>
 </html>
