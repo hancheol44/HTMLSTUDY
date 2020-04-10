@@ -1,0 +1,68 @@
+    * {
+		color: purple;
+	} 
+	 p {
+		color: red;
+		font-size: 80pt;
+		font-weight: bold;
+	}
+	p {
+		color: purble;
+	}
+	
+	p {
+		color: blue;
+	}
+	
+	p {
+		display: inline-block; 
+		/*float: left; */
+		color: green;
+		background-color: lightgray;
+		border: 1px solid gray;
+		width: 630px;
+	}
+	
+	div {
+		text-align: center;
+	}
+	
+	input {
+		color: gray;
+	}
+	
+/* 	input[type="password"] {
+		color: green;
+		background-color: pink;
+	}
+ */
+	input[name="pw"] {  
+	
+	
+		color: green;
+		background-color: pink;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

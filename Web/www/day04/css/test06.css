@@ -1,0 +1,32 @@
+span {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background-color: lightblue;
+	border: 5px dotted pink;
+	margin: 10px;
+	text-align: center;
+	color: white;
+}
+
+div > span + span {
+	color: orange;
+}
+
+div > div > span:nth-child(1) ~ span {
+	font-weight: bold;
+	color: red;
+}
+div > div > span:nth-child(1) + span {
+	font-style: italic;
+	color: lightgray;
+	
+}
+/*
+	1. css 에서의 주석처리
+	
+	2. 동위 선택자
+		1)선택자1 + 선택자2 : 선택자 1 바로 뒤에 위치하는 선택자2를 선택
+		2)선택자1 ~ 선택자2 : 선택자 1 뒤에 오는 선택자2를 선택
+	
+*/

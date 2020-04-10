@@ -1,0 +1,19 @@
+hr {
+	display: inline-block;
+	width: 500px;
+}
+
+hr:nth-child(2n) {
+	border: 1px solid red;
+}
+
+input {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+
+input[type="radio"]:checked {
+	display: inline-block;
+	background-color:blue;
+}

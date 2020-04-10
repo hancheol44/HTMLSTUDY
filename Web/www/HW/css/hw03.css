@@ -1,0 +1,37 @@
+body{
+	text-align: center;
+}
+
+.main {
+	width:739px;
+	height: 882px;
+	border: 1px solid #dee3eb;
+	background-color: #ffff;
+}
+
+.together {
+	background-image: url("../img2/mainphoto.png");
+	background-size: 166px 185px;
+	background-repeat:no-repeat;
+	width: 166px;
+	height: 185px;
+}
+.fwhitel {
+	color: white!important;
+	text-align: left;
+	margin-top: 0px!important;
+	magin-bottom: 0px!important;
+	font-size: 8pt;
+}
+.fwhiter {
+	color: white!important;
+	text-align: left;
+	margin-top: 0px!important;
+	magin-bottom: 0px!important;
+	font-size: 8pt;
+}
+.together > h5 {
+	font-size: 9pt!important;
+	font-weight: normal;
+	margin-top: 3px!important;
+}

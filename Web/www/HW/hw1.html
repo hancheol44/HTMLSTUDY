@@ -2,19 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <title>Test</title>
 <style>
 	.fr {
 		display: inline-block;
 		width: 500px;
-		height: 200px;
-		background-color: gray;
+		height: 700px;
+		background-color: white;
 		padding: 30px;
+		
 	}
 	.inText {
 		width:150px;
 		height: 30px;
 	}
+	.inText1 {
+		width: 320px;
+		height: 30px;
+	}
+		
 	.lbl {
 		display: inline-block;
 		width: 80px;
@@ -30,13 +37,49 @@
 			<div>
 				<label for="id" class="lbl">아이디</label><input name="id" id="id" type="text" class="inText">
 			@nate.com
-			<lebel style="width:150px; height:100px ;background-color: red; border: 2px solid brown; border-radius: 10%;">중복확인</lebel>
+			<label style="width:150px; height:100px ;background-color: red; border: 2px solid brown; border-radius: 10%;">중복확인</label>
 			
 			</div><br>
 			<div>
 				<label for="pw" class="lbl">비밀번호</label><input name="pw" id="pw" type="password" class="inText">
 			</div>
+			<h6>안전한 비밀번호 관리를 위한 TIP!</h6>
+			<div>
+				<label for="pwcheck" class="lbl">비밀번호 확인</label><input name="pwcheck" id="pwcheck" type="password" class="inText">
+			</div><br>
+			<div>
+				<label for="name" class="lbl">이름</label><input name="name" id="name" type="text" class="inText">
+			</div><br>
+			<div>
+				<label for="email" class="lbl">이메일</label><input name="email" id="email" type="text" class="inText">
+				@<input class="inText">
+			</div><br>
+			<div>
+				<lable class="lbl">휴대폰</lable>
+					<select id="phone" class="inText1">
+						<option value="argarg">Korea(82)</option>
+						<option value="Korea">123</option>
+						<option value="Korea">456</option>
+						<option value="Korea">789</option>
+						<option value="Korea">145</option>
+						<option value="Korea">754</option>
+					</select>
+			</div><br>
+			<div>
+				<input name="id" id="id" type="text" class="inText1">			
+			</div>
+			<div>
+			<label for="id" style="display: inline-block; width: 65px; height: 10px;">성별</label>	
+			<input class="w3-radio" type="radio" name="gender" value="male" checked>
+			<label>남자</label>
+			<input class="w3-radio" type="radio" name="gender" value="female">
+			<label>여자</label>
+
+				
+
+			</div>	
 		</div>
 	</form>
 </body>
 </html>
+			

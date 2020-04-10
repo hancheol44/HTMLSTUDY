@@ -1,0 +1,59 @@
+span {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background-color: lightblue;
+	border: 7px dotted pink;
+	margin: 10px;
+	text-align: center;
+	color: white;
+}
+
+div + span { 
+	color: white;
+	font-weight: bold;
+}
+
+div > span {
+	background-color: orange;
+}
+
+div > span:first-child {
+	background-color: #8080ff;
+}
+div > span:last-child {
+	background-color: #800080;
+}
+div > span:nth-child(2) {
+	background-color: #0fb3f0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
