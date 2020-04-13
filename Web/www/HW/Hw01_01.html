@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+<link rel="stylesheet" href="../css/w3.css" />
+<style>
+	
+</style>
+</head>
+<body>
+	<div class="w3-col m3"><p></p></div>
+	<div class="w3-col m6">
+		<h2 class="w3-orange w3-padding w3-card w3-center">
+			Login 객체 테스트
+		</h2>
+		<div id="frm" class="w3-col w3-card w3-padding mt10">
+			<div class="w3-col">
+				<label class="w3-col m3 rightalign"for="nid">I D : </label>
+				<span class="w3-col m7 w3-input w3-border" id="nid"></span>
+			</div>
+			<div class="w3-col mt10">
+				<label class="w3-col m3 rightalign"for="npw">P W : </label>
+				<span class="w3-col m7 w3-input w3-border" id="npw"></span>
+			</div>
+			<div class="w3-col mt10">
+				<label class="w3-col m3 rightalign"for="nName">이 름 : </label>
+				<span class="w3-col m7 w3-input w3-border" id="nName"></span>
+			</div>
+			<div class="w3-col mt10">
+				<label class="w3-col m3 rightalign"for="ntel">TEL : </label>
+				<span class="w3-col m7 w3-input w3-border" id="ntel"></span>
+			</div>
+		</div>
+	</div>	
+</body>
+<script type="text/javascript">
+	var param = location.search.substring(1);
+	
+	// 파라미터를 받아 분리할 배열을 만든다
+	var arr = new Array();
+	
+	// 첫 카테고리 기준 '&' 로 split 한다
+	var tmp = param.split('&');
+	
+	for(var i = 0 ; i < tmp.length ; i++) {
+		arr[i] = tmp[i].split('=');
+	}
+	
+	var id = arr[0][1];
+	var pw = arr[1][1];
+	var name = arr[3][1];
+	var tel = arr[6][1];
+	
+	document.getElementById('nid').innerHTML = id;
+	document.getElementById('npw').innerHTML = pw;
+	document.getElementById('nName').innerHTML = name;
+	document.getElementById('ntel').innerHTML = tel;
+</script>
+</html>
