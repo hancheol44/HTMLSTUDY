@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+<link rel="stylesheet" href="../css/w3.css" />
+<style>
+
+</style>
+</head>
+<body>
+	<div class="w3-col">
+		<div class="w3-button m2 w3-blue w3-hover-aqua bt " onclick="func01(this)">btn1</div>
+		<div class="w3-button m2 w3-orange w3-hover-yellow" onclick="func01(this)">btn2</div>
+		<div class="w3-button m2 w3-pink w3-hover-purple" id="btn3">btn3</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function func01(el) {
+		var sid = el.innerHTML;
+		alert("click : " + sid);
+	}
+	document.getElementById('btn3').onclick = function(){
+		let ele = this;
+		(function(){
+			alert(ele.getAttribute('id'));
+		})();   //무명함수생성과 함께 바로 실행하는 형식
+	}
+	
+
+	
+</script>
+</html>
