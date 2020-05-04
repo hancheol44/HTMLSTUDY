@@ -79,8 +79,9 @@
 		var npw = document.getElementById('pw').value;
 		var nName = encodeURIComponent(document.getElementById('name').value);
 		var ntel = document.getElementById('phone').value;
-	if(!nid || !npw || !nName || !ntel){
-		alert('아이디, 비번, 이름, 휴대폰번호는 제대로 입력해주세요');
+		var nmail = (document.getElementById('mail') + '@' + document.getElementById('mail2'));
+	if(!nid || !npw || !nName || !ntel || !nmail){
+		alert('아이디, 비번, 이름, 휴대폰번호, 메일형식 제대로 입력해주세요!!');
 		return;
 	}
 	

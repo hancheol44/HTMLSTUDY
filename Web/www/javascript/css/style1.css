@@ -1,0 +1,17 @@
+.wrap {
+	width: 760px;
+	height: 1086px;
+	background: gray;
+}
+
+.header {
+	width: 760px;
+	height: 155px;
+	background: #555;
+}
+
+.contents {
+	width: 760px;
+	height: 752px;
+	background: #666;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+<link rel="stylesheet" href="../css/w3.css" />
+<style>
+
+</style>
+</head>
+<body>
+	<div class="w3-center" id="org_div1">오늘 날씨가 너무 좋네요</div>
+</body>
+<script type="text/javascript">
+	var my_div = null;
+	var newDiv = null;
+	var newDiv2 = null;
+	newDiv = document.createElement('div');
+	newDiv2 = document.createElement('div');
+	newDiv.innerHTML = '<h1 class="w3-khaki w3-center">날도 좋은데.... <small>-학생-</small></h1>';
+	newDiv2.innerHTML = '<h1 class="w3-sand w3-center">그럼 수업은 여기까지 <small>-선생님-</small></h1>';
+	
+	my_div = document.getElementById('org_div1');
+	document.body.insertBefore(newDiv, my_div);
+	my_div.appendChild(newDiv2);
+</script>
+</html>

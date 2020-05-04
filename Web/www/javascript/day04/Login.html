@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Test</title>
 <link rel="stylesheet" href="../css/w3.css" />
+<script type="text/javascript" src="../../jquery/js/jquery-3.5.0.min.js"></script>
 <style>
 	.mt {
 		margin-top: 20px;
@@ -19,10 +20,10 @@
 </style>
 </head>
 <body>
-	<div class="w3-col m4"><p></p></div>
-	<div class="w3-col m4 w3-center">
-		<h3 class="w3-lime w3-card w3-padding">Login</h3>
-		<div class="w3-col w3-padding w3-card">
+	<div class="w3-third"><p></p></div>
+	<div class="w3-third w3-center" id="loginWin">
+		<h3 class="w3-light-blue w3-card-2 w3-round-xlarge w3-padding">Login</h3>
+		<div class="w3-col w3-padding w3-card-2 w3-round-xlarge">
 			<div>
 				<label class="w3-col m3 w3-right-align mt1" for="id">I D : </label>
 				<input type="text" id="id" name="id" class="w3-col m8 mt1 ml">
@@ -33,9 +34,12 @@
 			</div>
 		</div>
 			<div>
-				<div class="w3-half w3-button w3-red mt" id="cbtn">Cancel</div>
-				<div class="w3-half w3-button w3-blue mt" id="lbtn">Login</div>
+				<div class="w3-half w3-button w3-blue-gray mt w3-round" id="cbtn">Cancel</div>
+				<div class="w3-half w3-button w3-cyan mt w3-round" id="lbtn">Login</div>
 			</div>
+	</div>
+	<div class="w3-third" id="msgWin" style="display: none;">
+		<h3 class="w3-col w3-margin-top w3-card-4" style="padding-top: 80px; height: 250px;" id="msg"></h3>
 	</div>
 </body>
 <script type="text/javascript">
@@ -51,18 +55,76 @@
 		다시 입력받도록 하고 
 		통과되면 경고창에 통과 메세지를 출력하게 하세요.
  	*/
- 	
- 	document.getElementById('cbtn').onclick = function(){
+ /*
+ 	document.getElementById('cbtn').onclick = function() {
 		document.getElementById('id').value = '';
 		document.getElementById('pw').value = '';
 	}
 	
-	document.getElementById('lbtn').onclick = function(){
-		var inputId = document.getElementById('lbtn').value; 
+	document.getElementById('lbtn').onclick = function() {
+		var inputId = document.getElementById('id').value; 
 		
-		var regex = /^[a-z0-9]{5,8}$/g;
-		var result = regex.test(inputId);
-		alert(result);
+		var reg1 =/^[A-Za-z0-9]{5,8}$/;
+		var result = reg1.test(inputId);
+		
+		var inputPw = document.getElementById('pw').value;
+		
+		var reg =/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&+=.\-_*])([a-zA-Z0-9!@#$%^&+=*.\-_]){7,8}$/;
+		if(reg.test(inputPw)){
+			alert("정답");
+		} else {
+			alert("올바르지 않은 비밀번호입니다");
+		}
 	}
+ 	
+ */	
+	$(document).ready(function(){
+		$('#lbtn').click(function(){
+			// 할일
+			// 1. 데이터 읽고
+			var sid = $('#id').val();
+			var spw = $('#pw').val();
+			// 2. 데이터 유효성 검사
+			if(!sid){
+				$('#id').focus();
+				return;
+			}
+			if(!spw){
+				$('#pw').focus();
+				return;
+			}
+				
+			// 3. 비동기 통신을 하고
+			$.ajax({
+				url: 'http://localhost/loginProc.lp',
+				type: 'get',
+				dataType: 'json',
+				data: {
+					'id': sid,
+					'pw': spw
+				},
+				success: function(obj){
+					var result = obj.SID;
+					// 4. 결과에 따라서 뷰를 처리해준다.
+					if(result){
+						$('#msg').html('[ '+result + ' ]' + ' 회원님은 로그인 상태입니다.');
+						$('#loginWin').css('display','none');
+						$('#msgWin').css('display', '');
+					} else {
+						alert('** 아이디와 비밀번호를 확인하세요! **');
+						$('#id').val('');
+						$('#pw').val('');
+						$('#id').focus();
+						$('#pw').focus();
+					}
+				},
+				error: function(){
+					alert('### 통신 에러 ###');
+				}
+				
+			});
+			
+		});
+	});
 </script>
 </html>
